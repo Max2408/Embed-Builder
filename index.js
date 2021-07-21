@@ -22,6 +22,10 @@ app.use(cookieParser())
 app.use('/' , viewsRouter)
 app.use('/api' , api)
 
+app.use('*' , (req, res) => {
+    res.render('404')
+})
+
 app.listen(process.env.PORT, async() => {
     console.log('===> App listening at ', process.env.PORT)
 })
