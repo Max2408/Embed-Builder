@@ -14,9 +14,20 @@ One of the most powerful discord embed builder with a responsive panel.
 <img src="./screenshots/login.png">
 
 - Server List Page
+
+<img src="./screenshots/server.png">
+
 - Embed Builder Page
+
+<img src="./screenshots/embed.png">
+
 - Success Page
+
+<img src="./screenshots/success.png">
+
 - 404 Page
+
+<img src="./screenshots/404.png">
 
 ## Host it with heroku 
 
