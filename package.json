@@ -4,7 +4,7 @@
   "description": "A Powerfully embed builder for discord",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon ."
+    "start": "nodemon ."
   },
   "repository": {
     "type": "git",
