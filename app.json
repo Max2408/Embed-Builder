@@ -6,8 +6,15 @@
     "keywords": ["becoditive", "discord", "embed-builder"],
     "env": {
         "TOKEN": {
-          "description": "A secret key for verifying the integrity of signed cookies.",
+          "description": "Bot Token Of Your Discord Bot.",
           "value": ""
+        },
+        "PASSWORD": {
+          "description": "Set Password for the panel.",
+          "value": ""
+        },
+        "SECRET_KEY": {
+          "generator": "secret"
         }
       }
 }
