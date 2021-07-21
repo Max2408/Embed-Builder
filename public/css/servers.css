@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+
+body { 
+    background-color : rgb(37, 37, 37); 
+    font-family: josefin sans;
+}
+
+.primary-heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #e5e5e5;
+}
+
+.primary-heading::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+.secondary-heading {
+    text-align: center;
+    font-size: 1rem;
+    color: #d1d1d1;
+}
+
+.server {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(78, 78, 78);
+    height: 90px;
+    width: 450px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.server:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 4.95px 4.95px 6.6px;
+}
+
+.server-logo {
+    width: 70px;
+    height: 70px;
+    margin-top:  10px;
+    margin-left: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.server-name {
+    display: inline;
+    position: absolute;
+    margin-left: 10px;
+    color : black;
+}
+
+.server-mobile {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(78, 78, 78);
+    height: 320px;
+    width: 300px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.server-logo-mobile {
+    width: 230px;
+    height: 230px;
+    margin-top:  35px;
+    margin-left: 35px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.server-name-mobile {
+    text-decoration: none;
+    text-align: center;
+    color : black;
+}
+
+.select {
+    position: absolute;
+    display: inline;
+    margin-left: 230px;
+    margin-top: 24px;
+    color : rgb(255, 255, 255);
+    padding: 15px 35px;
+    background-color : rgb(0, 7, 37);
+}
+
+.server-list-mobile {
+    display: none
+}
+
+
+@media only screen and (max-width: 500px) {
+    .server-list {
+        display: none;
+    }
+
+    .server-list-mobile {
+        display: block;
+    }
+
+    .primary-heading {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #e5e5e5;
+    }
+    
+    .primary-heading::after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 250px;
+        background-color: rgb(255, 255, 255);
+        margin-left:  auto;
+        margin-right: auto;
+    }
+    
+    .secondary-heading {
+        text-align: center;
+        font-size: 1rem;
+        color: #d1d1d1;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .server-list {
+        display: none;
+    }
+
+    .server-list-mobile {
+        display: block;
+    }
+
+    .primary-heading {
+        text-align: center;
+        font-size: 2rem;
+        color: #e5e5e5;
+    }
+    
+    .primary-heading::after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 200px;
+        background-color: rgb(255, 255, 255);
+        margin-left:  auto;
+        margin-right: auto;
+    }
+    
+    .secondary-heading {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #d1d1d1;
+    }
+
+    .server-mobile {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(78, 78, 78);
+        height: 220px;
+        width: 200px;
+        border-radius: 10px 10px 10px 10px;
+    }
+    
+    .server-logo-mobile {
+        width: 130px;
+        height: 130px;
+        margin-top:  35px;
+        margin-left: 35px;
+        border-radius: 10px 10px 10px 10px;
+    }
+    
+    .server-name-mobile {
+        text-decoration: none;
+        text-align: center;
+        color : black;
+    }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "embed-builder",
+  "version": "0.0.2",
+  "description": "A Powerfully embed builder for discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Max2408/Embed-Builder.git"
+  },
+  "keywords": [
+    "discord",
+    "becoditive",
+    "embed-builder"
+  ],
+  "author": "beCoditive <contact@becoditive.xyz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Max2408/Embed-Builder/issues"
+  },
+  "homepage": "https://github.com/Max2408/Embed-Builder#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.12"
+  }
+}

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+
+
+body {
+    background-color : rgb(37, 37, 37); 
+    font-family: josefin sans;
+  }
+  h1 {
+    margin: 0 0 0.25em;
+  }
+  /* Reset Select */
+  select {
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #2c3e50;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: .25em;
+    margin-top: 10px;
+    margin-left: 30px ;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: rgb(37, 37, 37); ;
+  }
+  
+  .primary-heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #e5e5e5;
+    margin-top: 20px;
+}
+
+.primary-heading::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+.form {
+    background-color: rgb(68, 68, 68);
+    height: 400px;
+    width: 800px;
+    margin: 0 auto;
+}

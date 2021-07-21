@@ -1,0 +1,13 @@
+{
+    "name": "Embed Builder",
+    "description": "A Powerfully embed builder for discord",
+    "repository": "https://github.com/Max2408/Embed-Builder",
+    "logo": "https://cdn.becoditive.xyz/logos/becoditive-api.png",
+    "keywords": ["becoditive", "discord", "embed-builder"],
+    "env": {
+        "TOKEN": {
+          "description": "A secret key for verifying the integrity of signed cookies.",
+          "value": ""
+        }
+      }
+}

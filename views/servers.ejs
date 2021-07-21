@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Builder</title>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/css/servers.css">
+
+</head>
+<body>
+    <div class="header">
+        <h1 class="primary-heading">Embed Builder</h1>
+        <h3 class="secondary-heading">Select A Server To Send Embed</h3>
+    </div>
+    <br><br>
+    <div class="server-list">
+        <% for(var i=0; i < data.length; i++) {%>
+            <a href="/server/<%= data[i].id %>">
+                <div class="server">
+                    <img class="server-logo" src="https://cdn.discordapp.com/icons/<%= data[i].id %>/<%= data[i].icon %>.png" alt="server-logo">
+    
+                    <h4 class="server-name"><%= data[i].name %></h4>
+                    
+                    <h4 class="select">Select</h4>
+                </div>
+            </a>
+            <br><br>
+        <% } %>
+    </div>
+
+    <div class="server-list-mobile">
+        <% for(var i=0; i < data.length; i++) {%>
+            <a href="/server/<%= data[i].id %>">
+                <div class="server-mobile">
+                    <img class="server-logo-mobile" src="https://cdn.discordapp.com/icons/<%= data[i].id %>/<%= data[i].icon %>.png?size=2048" alt="server-logo">
+    
+                    <h4 class="server-name-mobile"><%= data[i].name %></h4>
+                </div>
+            </a>
+            <br><br>
+        <% } %>
+    </div>
+</body>
+</html>

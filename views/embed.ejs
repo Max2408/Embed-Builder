@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Builder</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'
+        rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'
+        type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body style="background : rgb(37, 37, 37) ;">
+                <form action="/api/send" method="POST">
+                    <div class="container py-3" >
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-10 offset-md-1">
+                                                <span class="anchor" id="formComplex"></span>
+                                                <!-- form complex example -->
+                                                <div class="card card-outline-secondary" style="background : rgb(212, 212, 212); color : #000;">
+                                                    <div class="card-header">
+                                                        <h3 class="mb-0" style="text-align: center;">Embed Builder</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row mt-4">
+                                                            <div class="col-sm-5 pb-3">
+                                                                <label for="channlid">Channel</label>
+                                                                <select class="form-control custom-select" id="channlid" name="channlid">
+                                                                    <% for(var i=0; i < data.length; i++) {%>
+                                                                        <% if(data[i].type === 0) { %>
+                                                                            <option value="<%= data[i].id %>"><%= data[i].name %></option>
+                                                                        <% } %>
+                                                                    <% } %>                                     
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-6 pb-3">
+                                                                <label for="thumbnail">Thumbnail</label>
+                                                                <input class="form-control" id="thumbnail" name="thumbnail"
+                                                                    type="url" >
+                                                            </div>
+                                                            <div class="col-sm-3 pb-3">
+                                                                <label for="title">Title</label>
+                                                                <input class="form-control" id="title" name="title" type="text">
+                                                            </div>
+                                                            <div class="col-sm-3 pb-3">
+                                                                <label for="color">Color Hex Code</label>
+                                                                <input class="form-control" id="color" name="color" type="text">
+                                                            </div>
+                                                            <div class="col-sm-6 pb-3">
+                                                                <label for="image">Image</label>
+                                                                <input class="form-control" id="image" name="image"
+                                                                    type="url" >
+                                                            </div>
+                                                            <div class="col-sm-3 pb-3">
+                                                                <label for="timestamp">Timestamp</label> <select
+                                                                    class="form-control custom-select" id="timestamp" name="timestamp">
+                                                                    <option value="no">
+                                                                        No
+                                                                     </option>
+                                                                    <option value="yes">
+                                                                       Yes
+                                                                    </option>
+                                                    
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3 pb-3">
+                                                                <label for="footer">Footer</label>
+                                                                <input class="form-control" id="footer" name="footer" type="text">
+                                                            </div>
+                                                            <div class="col-md-6 pb-3">
+                                                                <label for="description">Description</label>
+                                                                <textarea class="form-control"
+                                                                    id="description" name="description" required rows="4"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="float-right">
+                                                            <input class="btn btn-secondary" type="reset"
+                                                                value="Cancel">
+                                                            <input class="btn btn-primary" type="submit" value="Send">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/card-->
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                    </div>
+                                    <!--/col-->
+                                </div>
+                                <!--/row-->
+                    </div>
+                </form>
+</body>
+</html>
