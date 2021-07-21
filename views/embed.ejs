@@ -33,7 +33,7 @@
                                                                 <label for="channlid">Channel</label>
                                                                 <select class="form-control custom-select" id="channlid" name="channlid">
                                                                     <% for(var i=0; i < data.length; i++) {%>
-                                                                        <% if(data[i].type === 0) { %>
+                                                                        <% if(data[i].type === 0 || data[i].type === 5) { %>
                                                                             <option value="<%= data[i].id %>"><%= data[i].name %></option>
                                                                         <% } %>
                                                                     <% } %>                                     
