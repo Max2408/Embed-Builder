@@ -44,18 +44,13 @@
                                                                 <input class="form-control" id="thumbnail" name="thumbnail"
                                                                     type="url" >
                                                             </div>
-                                                            <div class="col-sm-3 pb-3">
+                                                            <div class="col-sm-5 pb-3">
                                                                 <label for="title">Title</label>
                                                                 <input class="form-control" id="title" name="title" type="text">
                                                             </div>
                                                             <div class="col-sm-3 pb-3">
-                                                                <label for="color">Color Hex Code</label>
-                                                                <input class="form-control" id="color" name="color" type="text">
-                                                            </div>
-                                                            <div class="col-sm-6 pb-3">
-                                                                <label for="image">Image</label>
-                                                                <input class="form-control" id="image" name="image"
-                                                                    type="url" >
+                                                                <label for="color">Color</label>
+                                                                <input class="form-control" id="color" name="color" type="color" style="height: 40px;">
                                                             </div>
                                                             <div class="col-sm-3 pb-3">
                                                                 <label for="timestamp">Timestamp</label> <select
@@ -69,7 +64,29 @@
                                                     
                                                                 </select>
                                                             </div>
-                                                            <div class="col-sm-3 pb-3">
+                                                            <div class="col-sm-6 pb-3">
+                                                                <label for="image">Image</label>
+                                                                <input class="form-control" id="image" name="image"
+                                                                    type="url" >
+                                                            </div>
+                                                            <div class="col-sm-5 pb-3">
+                                                                <label for="role">Ping Any Role</label>
+                                                                <select class="form-control custom-select" id="role" name="role">
+                                                                    <option value="none">None</option>
+                                                                    <% for(var i=0; i < roles.length; i++) {%>
+                                                                        
+                                                                        <% if(roles[i].managed === false) { %>
+
+                                                                            <% if(roles[i].name === "@everyone") { %>
+                                                                                <option value="@everyone"><%= roles[i].name %></option>
+                                                                            <% } else {%>
+                                                                                <option value="<%= roles[i].id %>"><%= roles[i].name %></option>
+                                                                            <% } %>
+                                                                        <% } %>
+                                                                    <% } %>                                     
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-5 pb-3">
                                                                 <label for="footer">Footer</label>
                                                                 <input class="form-control" id="footer" name="footer" type="text">
                                                             </div>

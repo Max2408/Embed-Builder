@@ -45,10 +45,18 @@ exports.server = async(req, res) => {
     }).then(res => res.json())
     .then(json => {return json})
 
+    let roles = await fetch(`https://discordapp.com/api/v9/guilds/${id}/roles`, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bot ${process.env.TOKEN}`
+        }
+    }).then(res => res.json())
+    .then(json => {return json})
+
     if(!data[0]) {
         res.render("404")
     }else {
-        res.render("embed" , {data : data})
+        res.render("embed" , {data : data, roles : roles})
     }
 }
 

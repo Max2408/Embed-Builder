@@ -1,51 +1,71 @@
-let discord = require('discord.js')
-let client = new discord.Client()
+let fetch = require('node-fetch')
 
 exports.send = async(req, res) => {
-
-    client.login(process.env.TOKEN)
-
-    let channel = client.channels.cache.find(ch => ch.id === req.body.channlid)
-
-    if(!channel) {
-        res.redirect('/')
-    }else {
-        let embed = new discord.MessageEmbed()
         
+        let embed = {
+            type : "rich"
+        }
+
         if(req.body.title) {
-            embed.setTitle(req.body.title)
+            embed.title = req.body.title
         }
 
         if(req.body.description) {
-            embed.setDescription(req.body.description)
+            embed.description = req.body.description
         }
 
         if(req.body.footer) {
-            embed.setFooter(req.body.footer)
+            embed.footer = {
+                text : req.body.footer
+            }
         }
 
         if(req.body.timestamp === "yes") {
-            embed.setTimestamp()
+            let date = new Date
+            embed.timestamp = date.toISOString()
         }
 
         if(req.body.image) {
-            embed.setImage(req.body.image)
+            embed.image = {
+                url : req.body.image
+            }
         }
 
         if(req.body.thumbnail) {
-            embed.setThumbnail(req.body.thumbnail)
+            embed.thumbnail  = {
+                url : req.body.thumbnail
+            }
         }
 
         if(req.body.color) {
-            embed.setColor(req.body.color)
-        }else{
-            embed.setColor('RANDOM')
+            embed.color  =  parseInt(req.body.color.split("#")[1] , 16);
         }
 
-        channel.send(embed)
+        let body = {
+            embeds : [embed],
+        }
+
+        if(req.body.role != "none") {
+            if(req.body.role === "@everyone") {
+                body.content = "@everyone"
+            }else {
+                body.content = `<@&${req.body.role}>`
+            }
+        }
+
+        let data = await fetch(`https://discord.com/api/v9/channels/${req.body.channlid}/messages`, {
+            method: 'POST',
+            headers: {
+                "Authorization": `Bot ${process.env.TOKEN}`,
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then(res => res.json())
+        .then(json => {return json})
+
+        console.log(data)
 
         res.render('success')
-    }
 }
 
 exports.login = async(req, res) => {

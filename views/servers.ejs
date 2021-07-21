@@ -20,7 +20,12 @@
         <% for(var i=0; i < data.length; i++) {%>
             <a href="/server/<%= data[i].id %>">
                 <div class="server">
-                    <img class="server-logo" src="https://cdn.discordapp.com/icons/<%= data[i].id %>/<%= data[i].icon %>.png" alt="server-logo">
+                    <% if(data[i].icon === null ) { %>
+                        
+                        <img class="server-logo" src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-4-1.png" alt="server-logo">
+                    <% } else {%>
+                        <img class="server-logo" src="https://cdn.discordapp.com/icons/<%= data[i].id %>/<%= data[i].icon %>.png?size=2048" alt="server-logo">
+                    <% }%>
     
                     <h4 class="server-name"><%= data[i].name %></h4>
                     
@@ -35,8 +40,13 @@
         <% for(var i=0; i < data.length; i++) {%>
             <a href="/server/<%= data[i].id %>">
                 <div class="server-mobile">
-                    <img class="server-logo-mobile" src="https://cdn.discordapp.com/icons/<%= data[i].id %>/<%= data[i].icon %>.png?size=2048" alt="server-logo">
-    
+                   
+                    <% if(data[i].icon === null ) { %>
+                        
+                        <img class="server-logo-mobile" src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-4-1.png" alt="server-logo">
+                    <% } else {%>
+                        <img class="server-logo-mobile" src="https://cdn.discordapp.com/icons/<%= data[i].id %>/<%= data[i].icon %>.png?size=2048" alt="server-logo">
+                    <% }%>
                     <h4 class="server-name-mobile"><%= data[i].name %></h4>
                 </div>
             </a>
