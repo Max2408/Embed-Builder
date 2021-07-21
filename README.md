@@ -10,6 +10,9 @@ One of the most powerful discord embed builder with a responsive panel.
 ## Screenshots
 
 - Login Page
+
+<img src="./screenshots/login.png">
+
 - Server List Page
 - Embed Builder Page
 - Success Page
