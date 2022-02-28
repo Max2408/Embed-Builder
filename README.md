@@ -48,4 +48,4 @@ Make The .env file and then do `npm i` and `npm start`
 
 <img src="./screenshots/404.png">
 
-> Made By `</Max>#5589` contact me if you are stuck any where or you find any bug, you can also mail me at `contact@becoditive.xyz`.
+> Made By `</Max>#5589` contact me if you are stuck any where or you find any bug, you can also mail me at `max@ecarrd.com`.
