@@ -3,7 +3,9 @@ const app = express()
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const morgan = require('morgan')
-var cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
+const discord = require('discord.js')
+const client = new discord.Client();
 
 let viewsRouter = require('./routers/views')
 let api = require('./routers/api')
@@ -28,4 +30,12 @@ app.use('*' , (req, res) => {
 
 app.listen(process.env.PORT, async() => {
     console.log('===> App listening at ', process.env.PORT)
+
+    client.on('ready', () => {
+        console.log('===> Logged in as: ', client.user.username);
+
+        client.user.setActivity(process.env.STATUS ,{ type : "STREAMING" })
+    });
 })
+
+client.login(process.env.TOKEN)
