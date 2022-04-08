@@ -2,6 +2,8 @@ let fetch = require('node-fetch')
 
 exports.send = async(req, res) => {
         
+        console.log(req.body)
+
         let embed = {
             type : "rich"
         }
@@ -62,8 +64,6 @@ exports.send = async(req, res) => {
             body: JSON.stringify(body)
         }).then(res => res.json())
         .then(json => {return json})
-
-        console.log(data)
 
         res.render('success')
 }

@@ -16,155 +16,106 @@
 </head>
 
 <body style="background : rgb(37, 37, 37) ;">
-                <form action="/api/send" method="POST">
-                    <div class="container py-3 hidden" >
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row justify-content-center">
-                                            <div class="col-md-10 offset-md-1">
-                                                <span class="anchor" id="formComplex"></span>
-                                                <!-- form complex example -->
-                                                <div class="card card-outline-secondary" style="background : rgb(212, 212, 212); color : #000;">
-                                                    <div class="card-header">
-                                                        <h3 class="mb-0" style="text-align: center;">Embed Builder</h3>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="row mt-4">
-                                                            <div class="col-sm-5 pb-3">
-                                                                <label for="channlid">Channel</label>
-                                                                <select class="form-control custom-select" id="channlid" name="channlid">
-                                                                    <% for(var i=0; i < data.length; i++) {%>
-                                                                        <% if(data[i].type === 0 || data[i].type === 5) { %>
-                                                                            <option value="<%= data[i].id %>"><%= data[i].name %></option>
-                                                                        <% } %>
-                                                                    <% } %>                                     
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-6 pb-3">
-                                                                <label for="thumbnail">Thumbnail</label>
-                                                                <input class="form-control" id="thumbnail" name="thumbnail"
-                                                                    type="url" >
-                                                            </div>
-                                                            <div class="col-sm-5 pb-3">
-                                                                <label for="title">Title</label>
-                                                                <input class="form-control" id="title" name="title" type="text">
-                                                            </div>
-                                                            <div class="col-sm-3 pb-3">
-                                                                <label for="color">Color</label>
-                                                                <input class="form-control" id="color" name="color" type="color" style="height: 40px;">
-                                                            </div>
-                                                            <div class="col-sm-3 pb-3">
-                                                                <label for="timestamp">Timestamp</label> <select
-                                                                    class="form-control custom-select" id="timestamp" name="timestamp">
-                                                                    <option value="no">
-                                                                        No
-                                                                     </option>
-                                                                    <option value="yes">
-                                                                       Yes
-                                                                    </option>
-                                                    
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-6 pb-3">
-                                                                <label for="image">Image</label>
-                                                                <input class="form-control" id="image" name="image"
-                                                                    type="url" >
-                                                            </div>
-                                                            <div class="col-sm-5 pb-3">
-                                                                <label for="role">Ping Any Role</label>
-                                                                <select class="form-control custom-select" id="role" name="role">
-                                                                    <option value="none">None</option>
-                                                                    <% for(var i=0; i < roles.length; i++) {%>
-                                                                        
-                                                                        <% if(roles[i].managed === false) { %>
+    <form action="/api/send" method="POST" class="">
+        <div class="container py-3 " >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 offset-md-1">
+                                    <span class="anchor" id="formComplex"></span>
+                                    <!-- form complex example -->
+                                    <div class="card card-outline-secondary" style="background : rgb(212, 212, 212); color : #000;">
+                                        <div class="card-header">
+                                            <h3 class="mb-0" style="text-align: center;">Embed Builder</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row mt-4">
+                                                <div class="col-sm-5 pb-3">
+                                                    <label for="channlid">Channel</label>
+                                                    <select class="form-control custom-select" id="channlid" name="channlid">
+                                                        <% for(var i=0; i < data.length; i++) {%>
+                                                            <% if(data[i].type === 0 || data[i].type === 5) { %>
+                                                                <option value="<%= data[i].id %>"><%= data[i].name %></option>
+                                                            <% } %>
+                                                        <% } %>                                     
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6 pb-3">
+                                                    <label for="thumbnail">Thumbnail</label>
+                                                    <input class="form-control" id="thumbnail" name="thumbnail"
+                                                        type="url" >
+                                                </div>
+                                                <div class="col-sm-5 pb-3">
+                                                    <label for="title">Title</label>
+                                                    <input class="form-control" id="title" name="title" type="text">
+                                                </div>
+                                                <div class="col-sm-3 pb-3">
+                                                    <label for="color">Color</label>
+                                                    <input class="form-control" id="color" name="color" type="color" style="height: 40px;">
+                                                </div>
+                                                <div class="col-sm-3 pb-3">
+                                                    <label for="timestamp">Timestamp</label> <select
+                                                        class="form-control custom-select" id="timestamp" name="timestamp">
+                                                        <option value="no">
+                                                            No
+                                                            </option>
+                                                        <option value="yes">
+                                                            Yes
+                                                        </option>
+                                        
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6 pb-3">
+                                                    <label for="image">Image</label>
+                                                    <input class="form-control" id="image" name="image"
+                                                        type="url" >
+                                                </div>
+                                                <div class="col-sm-5 pb-3">
+                                                    <label for="role">Ping Any Role</label>
+                                                    <select class="form-control custom-select" id="role" name="role">
+                                                        <option value="none">None</option>
+                                                        <% for(var i=0; i < roles.length; i++) {%>
+                                                            
+                                                            <% if(roles[i].managed === false) { %>
 
-                                                                            <% if(roles[i].name === "@everyone") { %>
-                                                                                <option value="@everyone"><%= roles[i].name %></option>
-                                                                            <% } else {%>
-                                                                                <option value="<%= roles[i].id %>"><%= roles[i].name %></option>
-                                                                            <% } %>
-                                                                        <% } %>
-                                                                    <% } %>                                     
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-5 pb-3">
-                                                                <label for="footer">Footer</label>
-                                                                <input class="form-control" id="footer" name="footer" type="text">
-                                                            </div>
-                                                            <div class="col-md-6 pb-3">
-                                                                <label for="description">Description</label>
-                                                                <textarea class="form-control"
-                                                                    id="description" name="description" required rows="4"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <div class="float-right">
-                                                            <input class="btn btn-secondary" type="reset"
-                                                                value="Cancel">
-                                                            <input class="btn btn-primary" type="submit" value="Send">
-                                                        </div>
-                                                    </div>
+                                                                <% if(roles[i].name === "@everyone") { %>
+                                                                    <option value="@everyone"><%= roles[i].name %></option>
+                                                                <% } else {%>
+                                                                    <option value="<%= roles[i].id %>"><%= roles[i].name %></option>
+                                                                <% } %>
+                                                            <% } %>
+                                                        <% } %>                                     
+                                                    </select>
                                                 </div>
-                                                <!--/card-->
+                                                <div class="col-sm-5 pb-3">
+                                                    <label for="footer">Footer</label>
+                                                    <input class="form-control" id="footer" name="footer" type="text">
+                                                </div>
+                                                <div class="col-md-6 pb-3">
+                                                    <label for="description">Description</label>
+                                                    <textarea class="form-control"
+                                                        id="description" name="description" required rows="4"></textarea>
+                                                </div>
+                                                </div>
+
+                                               
+                                        <div class="card-footer">
+                                            <div class="float-right">
+                                                <input class="btn btn-secondary" type="reset"
+                                                    value="Cancel">
+                                                <input class="btn btn-primary" type="submit" value="Send">
                                             </div>
                                         </div>
-                                        <!--/row-->
                                     </div>
-                                    <!--/col-->
+                                    <!--/card-->
                                 </div>
-                                <!--/row-->
-                    </div>
-                    <div class="container py-3" >
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-10 offset-md-1">
-                                        <span class="anchor" id="formComplex"></span>
-                                        <!-- form complex example -->
-                                        <div class="card card-outline-secondary" style="background : rgb(212, 212, 212); color : #000;">
-                                            <div class="card-header">
-                                                <h3 class="mb-0" style="text-align: center;">Add Buttons To Embed (Leave Empty To Skip)</h3>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row mt-4">
-                                                    <div class="col-sm-5 pb-3">
-                                                        <label for="type">Button Type</label>
-                                                        <select class="form-control custom-select" id="button-type" name="type" onchange="getComboA(this)">
-                                                            <option value="link">Link Button</option>     
-                                                            <option value="primary">Primary Button</option>  
-                                                                                        
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-6 pb-3">
-                                                        <label for="lable">Label</label>
-                                                        <input class="form-control" id="lable" name="lable"
-                                                            type="text" >
-                                                    </div>
-                                                    <div class="col-sm-6 pb-3" id="link-input">
-                                                        <label for="link">Link</label>
-                                                        <input class="form-control" id="link" name="link"
-                                                            type="url" >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer">
-                                                <div class="float-right">
-                                                    <input class="btn btn-secondary" type="reset"
-                                                        value="Cancel">
-                                                    <input class="btn btn-primary" type="submit" value="Send">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/card-->
-                                    </div>
-                                </div>
-                                <!--/row-->
                             </div>
-                            <!--/col-->
+                            <!--/row-->
                         </div>
-                        <!--/row-->
-            </div>
-                </form>
+                        <!--/col-->
+                    </div>
+                    <!--/row-->
+        </div>    
+    </form>
 </body>
 </html>
